@@ -231,6 +231,7 @@ int main() {
 				prop = vec[ind].sumPropertyTaxes();
 				for (int i = 0; i < vec[ind].get_properties().size(); i++) inc += vec[ind].get_properties()[i]->calculateIncomeTax();
 				cout << "\tПодоходный налог: " << fixed << inc << endl;
+
 				cout << "\tНалог на имущество: " << prop << '\n';
 				cout << "Для продолжения нажмите любую клавишу...";
 				_getch();

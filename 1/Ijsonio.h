@@ -1,5 +1,9 @@
 #pragma once
-class Ijsonio
-{
+#include "json.hpp"
+
+class Ijsonio {
+	virtual void fromJson(nlohmann::json json) = 0;
+	virtual nlohmann::json toJson() = 0;
+	virtual ~Ijsonio() {}
 };
 

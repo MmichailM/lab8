@@ -1,0 +1,28 @@
+{
+  "fullname": "Караваев Данил Владимирович",
+  "inn": "729502789403",
+  "properties": [
+    {
+      "Apartment": {
+        "square": 80,
+        "worth": 4000000
+      }
+    },
+    {
+      "Apartment": 90,
+      "worth": 5000000
+    },
+    {
+      "Car": {
+        "horsepower": 75,
+        "worth": 4000000
+      }
+    },
+    {
+      "CountryHouse": {
+        "distanceFromCity": 30,
+        "worth": 15000000
+      }
+    }
+  ]
+}

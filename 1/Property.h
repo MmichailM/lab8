@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Ijsonio.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ namespace TAX_RATES {
 	const int LIMIT_Apartment_SQUARE = 100;
 }
 
-class Property {
+class Property: public Ijsonio {
 protected:
 	size_t worth;
 public:

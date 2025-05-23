@@ -10,14 +10,14 @@
   <Class Name="Apartment">
     <Position X="2.25" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAACABAAAAAQIAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAABAAAAAAAgCABAAAAAQIAAIAA=</HashCode>
       <FileName>Apartment.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CountryHouse">
     <Position X="5.75" Y="7" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQBAAAAAABAAAAAAAACAAAAgAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAARBAAAAAABAAAAAAAgCAAAAgAAIAAAAAA=</HashCode>
       <FileName>CountryHouse.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,8 +31,15 @@
   <Class Name="Car">
     <Position X="9.75" Y="4" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAQgAAAAAAABAAAAAAAACAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAQAAAAQhAAAAAAABAAAAAAAgCAAAAAAAAAAAAAI=</HashCode>
       <FileName>Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ijsonio">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Ijsonio.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

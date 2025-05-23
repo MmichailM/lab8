@@ -8,6 +8,8 @@ public:
 	double get_horsepower() const;
 	double calculatePropertyTax() const;
 	void printProperty(ostream& out);
+	void fromJson(nlohmann::json json);
+	void toJson();
 	~Car();
 };
 

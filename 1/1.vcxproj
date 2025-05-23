@@ -143,6 +143,7 @@
     <ClInclude Include="Apartment.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CountryHouse.h" />
+    <ClInclude Include="Ijsonio.h" />
     <ClInclude Include="Init.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="Property.h" />

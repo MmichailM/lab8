@@ -11,6 +11,7 @@ class Owner {
 	string inn;
 	vector<Property*> properties;
 public:
+	Owner() : fullname(""), inn("") {}
 	Owner(string fullname, string INN);
 	string get_fullname();
 	string get_inn();

@@ -41,7 +41,7 @@ double Owner::sumIncomeTaxes() {
 }
 
 ostream& operator<<(ostream& out, Owner& o) {
-	out << "Собственник: " << o.fullname << ", ИНН: " << o.inn << '\n';
+	out << "Полное имя: " << o.fullname << ", ИНН: " << o.inn << '\n';
 	vector<Property*> vec = o.get_properties();
 	for (Property* i : vec) out << '\t' << *i;
 	return out;

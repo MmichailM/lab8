@@ -1,0 +1,27 @@
+{
+    "fullname": "Karavaev Danil Vladimirovich",
+    "inn": "729502789403",
+    "properties": [
+        {
+            "Apartment": {
+                "tax": 555.5550000000001
+            }
+        },
+        {
+            "Apartment": {
+                "tax": 666.666
+            }
+        },
+        {
+            "Car": {
+                "tax": 54.4439
+            }
+        },
+        {
+            "CountryHouse": {
+                "tax": 666.666
+            }
+        }
+    ],
+    "sumtax": 1943.3309
+}

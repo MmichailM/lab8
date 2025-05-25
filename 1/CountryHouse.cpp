@@ -16,8 +16,13 @@ void CountryHouse::printProperty(ostream& out) {
 }
 
 void CountryHouse::fromJson(nlohmann::json j) {
-	distanceFromCity = j["CountryHouse"]["distanceFromCity"];
-	worth = j["CountryHouse"]["worth"];
+	try {
+		distanceFromCity = j["CountryHouse"]["distanceFromCity"];
+		worth = j["CountryHouse"]["worth"];
+	}
+	catch (exception) {
+		throw invalid_argument("incorrect file");
+	}
 }
 
 nlohmann::json CountryHouse::toJson() {

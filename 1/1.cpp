@@ -188,21 +188,31 @@ int main() {
 			cout << "Введите название файла ввода: ";
 			getline(cin, input_file);
 			ifstream fin;
-			while (true) {
-				try {
-					fin.open(input_file);
-					break;
-				}
-				catch (invalid_argument) {
-					system("cls");
-					cout << "Некорректный файл ввода, введите еще раз: ";
-					getline(cin, input_file);
-				}
+			fin.open(input_file);
+			while (!fin.good()) {
+				system("cls");
+				clog << "Такого файла несуществует, введите корректный файл ввода: ";
+				getline(cin, input_file);
+				fin.open(input_file);
 			}
 			Owner human;
 			nlohmann::json j;
-			j = nlohmann::json::parse(fin);
-			human.fromJson(j);
+
+			try {
+				j = nlohmann::json::parse(fin);
+			}
+			catch (nlohmann::json::parse_error) {
+				clog << "Некорректный файл ввода\n";
+				return -1;
+			}
+
+			try {
+				human.fromJson(j);
+			}
+			catch (invalid_argument) {
+				clog << "Некорректный файл ввода\n";
+				return -1;
+			}
 			man = &human;
 			out(man);
 			break;
@@ -218,21 +228,20 @@ void out(Owner* man) {
 	cout << "Введите название файла вывода: ";
 	getline(cin, output_file);
 	ofstream fout;
+	fout.open(output_file);
+	nlohmann::json js = human.toJson();
 	while (true) {
 		try {
-			fout.open(output_file);
+			fout << js.dump(4);
 			break;
 		}
-		catch (invalid_argument) {
+		catch (exception) {
 			system("cls");
-			cout << "Информация о собственнике:\n";
-			cout << '\t' << human;
-			cout << "Некорректный файл вывода, введите еще раз: ";
+			clog << "Некорректный файл вывода, введите еще раз: ";
 			getline(cin, output_file);
+			fout.open(output_file);
 		}
 	}
-	nlohmann::json js = human.toJson();
-	fout << js.dump(4);
 	fout.close();
 	cout << "\n\nВ файл " << output_file << " выведена информация о налогах на имущество собственника " << human.get_fullname() << '\n';
 }

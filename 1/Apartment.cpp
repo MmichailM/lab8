@@ -16,8 +16,13 @@ void Apartment::printProperty(ostream& out) {
 }
 
 void Apartment::fromJson(nlohmann::json j) {
-	square = j["Apartment"]["square"];
-	worth = j["Apartment"]["worth"];
+	try {
+		square = j["Apartment"]["square"];
+		worth = j["Apartment"]["worth"];
+	}
+	catch (exception) {
+		throw invalid_argument("incorrect file");
+	}
 }
 
 nlohmann::json Apartment::toJson() {

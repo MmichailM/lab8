@@ -19,8 +19,13 @@ void Car::printProperty(ostream& out) {
 }
 
 void Car::fromJson(nlohmann::json j) {
-	horsepower = j["Car"]["horsepower"];
-	worth = j["Car"]["worth"];
+	try {
+		horsepower = j["Car"]["horsepower"];
+		worth = j["Car"]["worth"];
+	}
+	catch (exception) {
+		throw invalid_argument("incorrect file");
+	}
 }
 
 nlohmann::json Car::toJson() {

@@ -48,20 +48,26 @@ ostream& operator<<(ostream& out, Owner& o) {
 }
 
 void Owner::fromJson(nlohmann::json j) {
-	string fullname1 = j["fullname"];
-	string inn1 = j["inn"];
-	vector<Property*> properties1(j["properties"].size());
-	string key;
-	for (int i = 0; i < properties1.size(); i++) {
-		key = j["properties"][i].items().begin().key();
-		properties1[i] = PropertySimpleFactory::getProperty(key);
-		properties1[i]->fromJson(j["properties"][i]);
+	try {
+		string fullname1 = j["fullname"];
+		string inn1 = j["inn"];
+		vector<Property*> properties1(j["properties"].size());
+		string key;
+		if (!j["properties"].is_array()) throw invalid_argument("incorrect file");
+		for (int i = 0; i < properties1.size(); i++) {
+			key = j["properties"][i].items().begin().key();
+			properties1[i] = PropertySimpleFactory::getProperty(key);
+			properties1[i]->fromJson(j["properties"][i]);
+		}
+		if (inn1.size() != 12) throw invalid_argument("inn must have 12 digits");
+		for (char i : inn1) if (!isdigit(i)) throw invalid_argument("inn must have only digits");
+		fullname = fullname1;
+		inn = inn1;
+		properties = properties1;
 	}
-	if (inn1.size() != 12) throw invalid_argument("inn must have 12 digits");
-	for (char i : inn1) if (!isdigit(i)) throw invalid_argument("inn must have only digits");
-	fullname = fullname1;
-	inn = inn1;
-	properties = properties1;
+	catch (exception) {
+		throw invalid_argument("incorrect file");
+	}
 }
 
 nlohmann::json Owner::toJson() {

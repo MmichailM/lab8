@@ -16,12 +16,8 @@ void CountryHouse::printProperty(ostream& out) {
 }
 
 void CountryHouse::fromJson(nlohmann::json j) {
-	ifstream fin("input.json");
-	if (!fin) throw exception("error");
-	j = nlohmann::json::parse(fin);
 	distanceFromCity = j["CountryHouse"]["distanceFromCity"];
 	worth = j["CountryHouse"]["worth"];
-	fin.close();
 }
 
 nlohmann::json CountryHouse::toJson() {

@@ -9,7 +9,7 @@ public:
 	double calculatePropertyTax() const;
 	void printProperty(ostream& out);
 	void fromJson(nlohmann::json json);
-	void toJson();
+	nlohmann::json toJson();
 	~Car();
 };
 

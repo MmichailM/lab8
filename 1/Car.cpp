@@ -18,4 +18,20 @@ void Car::printProperty(ostream& out) {
 	out << "Автомобиль: стоимость: " << worth << ", мощность двигателя: " << horsepower << '\n';
 }
 
+void Car::fromJson(nlohmann::json j) {
+	ifstream fin("input.json");
+	if (!fin) throw exception("error");
+	j = nlohmann::json::parse(fin);
+	horsepower = j["Car"]["horsepower"];
+	worth = j["Car"]["worth"];
+	fin.close();
+}
+
+nlohmann::json Car::toJson() {
+	nlohmann::json j;
+	j["Car"]["horsepower"] = horsepower;
+	j["Car"]["worth"] = worth;
+	return j;
+}
+
 Car::~Car() {}

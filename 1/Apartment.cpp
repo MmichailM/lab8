@@ -24,10 +24,11 @@ void Apartment::fromJson(nlohmann::json j) {
 	fin.close();
 }
 
-void Apartment::toJson() {
+nlohmann::json Apartment::toJson() {
 	nlohmann::json j;
 	j["Apartment"]["square"] = square;
 	j["Apartment"]["worth"] = worth;
+	return j;
 }
 
 Apartment::~Apartment() {}

@@ -15,7 +15,7 @@ int main() {
 	ap.fromJson(j["properties"][0]);
 	Car c(3000000, 200);
 	nlohmann::json js = c.toJson();
-	j["properties"][2]["Car"]["horsepower"] = js["horsepower"];
-	j["properties"][2]["Car"]["worth"] = js["worth"];
-	cout << ap;
+	ofstream fout("output.json");
+	fout << js.dump(4);
+	fout.close();
 }

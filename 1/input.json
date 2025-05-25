@@ -4,19 +4,19 @@
   "properties": [
     {
       "Apartment": {
-        "square": 80,
+        "square": 80.0,
         "worth": 4000000
       }
     },
     {
       "Apartment": {
-        "square": 90,
+        "square": 90.0,
         "worth": 5000000
       }
     },
     {
       "Car": {
-        "horsepower": 75,
+        "horsepower": 75.0,
         "worth": 4000000
       }
     },

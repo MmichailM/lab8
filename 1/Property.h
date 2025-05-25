@@ -23,6 +23,7 @@ class Property: public Ijsonio {
 protected:
 	size_t worth;
 public:
+	Property() : worth(0) {}
 	Property(size_t worth);
 	size_t get_worth();
 	virtual double calculatePropertyTax() const = 0;

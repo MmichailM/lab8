@@ -22,8 +22,7 @@ void Apartment::fromJson(nlohmann::json j) {
 
 nlohmann::json Apartment::toJson() {
 	nlohmann::json j;
-	j["Apartment"]["square"] = square;
-	j["Apartment"]["worth"] = worth;
+	j["Apartment"]["tax"] = calculatePropertyTax();
 	return j;
 }
 

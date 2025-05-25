@@ -4,27 +4,24 @@
     "properties": [
         {
             "Apartment": {
-                "square": 80.0,
-                "worth": 4000000
+                "tax": 555.5550000000001
             }
         },
         {
             "Apartment": {
-                "square": 90.0,
-                "worth": 5000000
+                "tax": 666.666
             }
         },
         {
             "Car": {
-                "horsepower": 75.0,
-                "worth": 4000000
+                "tax": 54.4439
             }
         },
         {
             "CountryHouse": {
-                "distanceFromCity": 30,
-                "worth": 15000000
+                "tax": 666.666
             }
         }
-    ]
+    ],
+    "sumtax": 1943.3309
 }

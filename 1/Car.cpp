@@ -25,8 +25,7 @@ void Car::fromJson(nlohmann::json j) {
 
 nlohmann::json Car::toJson() {
 	nlohmann::json j;
-	j["Car"]["horsepower"] = horsepower;
-	j["Car"]["worth"] = worth;
+	j["Car"]["tax"] = calculatePropertyTax();
 	return j;
 }
 

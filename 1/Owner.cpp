@@ -34,6 +34,12 @@ double Owner::sumPropertyTaxes() {
 	return taxes;
 }
 
+double Owner::sumIncomeTaxes() {
+	double taxes = 0.0;
+	for (Property* i : properties) taxes += i->calculateIncomeTax();
+	return taxes;
+}
+
 ostream& operator<<(ostream& out, Owner& o) {
 	out << "Собственник: " << o.fullname << ", ИНН: " << o.inn << '\n';
 	vector<Property*> vec = o.get_properties();
@@ -51,6 +57,8 @@ void Owner::fromJson(nlohmann::json j) {
 		properties1[i] = PropertySimpleFactory::getProperty(key);
 		properties1[i]->fromJson(j["properties"][i]);
 	}
+	if (inn1.size() != 12) throw invalid_argument("inn must have 12 digits");
+	for (char i : inn1) if (!isdigit(i)) throw invalid_argument("inn must have only digits");
 	fullname = fullname1;
 	inn = inn1;
 	properties = properties1;
@@ -60,6 +68,7 @@ nlohmann::json Owner::toJson() {
 	nlohmann::json j;
 	j["fullname"] = fullname;
 	j["inn"] = inn;
+	j["sumtax"] = sumPropertyTaxes();
 	for (int i = 0; i < properties.size(); i++) j["properties"][i] = properties[i]->toJson();
 	return j;
 }

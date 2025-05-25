@@ -20,6 +20,7 @@ public:
 	void addProperty(Property* property);
 	void deleteProperty(size_t ind);
 	double sumPropertyTaxes();
+	double sumIncomeTaxes();
 	friend ostream& operator<< (ostream& out, Owner& o);
 	void fromJson(nlohmann::json j);
 	nlohmann::json toJson();

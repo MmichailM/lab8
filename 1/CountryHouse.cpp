@@ -22,8 +22,7 @@ void CountryHouse::fromJson(nlohmann::json j) {
 
 nlohmann::json CountryHouse::toJson() {
 	nlohmann::json j;
-	j["CountryHouse"]["distanceFromCity"] = distanceFromCity;
-	j["CountryHouse"]["worth"] = worth;
+	j["CountryHouse"]["tax"] = calculatePropertyTax();
 	return j;
 }
 

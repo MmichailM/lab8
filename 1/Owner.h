@@ -23,5 +23,6 @@ public:
 	friend ostream& operator<< (ostream& out, Owner& o);
 	void fromJson(nlohmann::json j);
 	nlohmann::json toJson();
+	~Owner() {}
 };
 

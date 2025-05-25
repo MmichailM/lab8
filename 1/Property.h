@@ -30,6 +30,8 @@ public:
 	double calculateIncomeTax() const;
 	virtual void printProperty(ostream& out) = 0;
 	friend ostream& operator<< (ostream& out, Property& pr);
+	virtual void fromJson(nlohmann::json json) = 0;
+	virtual nlohmann::json toJson() = 0;
 	virtual ~Property();
 };
 

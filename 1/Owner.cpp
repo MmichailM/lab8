@@ -56,5 +56,8 @@ void Owner::fromJson(nlohmann::json j) {
 }
 
 nlohmann::json Owner::toJson() {
-
+	nlohmann::json j;
+	j["fullname"] = fullname;
+	j["inn"] = inn;
+	for (int i = 0; i < properties.size(); i++) j["properties"][i] = properties[i]->toJson();
 }

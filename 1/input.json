@@ -9,9 +9,11 @@
       }
     },
     {
-      "Apartment": 90,
-      "worth": 5000000
-    },
+      "Apartment": {
+        "square": 90,
+        "worth": 5000000
+      }
+    }
     {
       "Car": {
         "horsepower": 75,

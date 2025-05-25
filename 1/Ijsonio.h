@@ -2,6 +2,7 @@
 #include "json.hpp"
 
 class Ijsonio {
+protected:
 	virtual void fromJson(nlohmann::json json) = 0;
 	virtual nlohmann::json toJson() = 0;
 	virtual ~Ijsonio() {}

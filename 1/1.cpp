@@ -6,5 +6,13 @@
 #include <iomanip>
 
 int main() {
-	Apartment ap;
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	setlocale(LC_ALL, "russian");
+	Owner man;
+	ifstream fin("input.json");
+	nlohmann::json j;
+	j = nlohmann::json::parse(fin);
+	man.fromJson(j);
+	cout << man;
 }

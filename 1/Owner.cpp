@@ -47,8 +47,9 @@ void Owner::fromJson(nlohmann::json j) {
 	vector<Property*> properties1(j["properties"].size());
 	string key;
 	for (int i = 0; i < properties1.size(); i++) {
-		key = j.items().begin().key();
+		key = j["properties"][i].items().begin().key();
 		properties1[i] = PropertySimpleFactory::getProperty(key);
+		properties1[i]->fromJson(j["properties"][i]);
 	}
 	fullname = fullname1;
 	inn = inn1;
@@ -60,4 +61,5 @@ nlohmann::json Owner::toJson() {
 	j["fullname"] = fullname;
 	j["inn"] = inn;
 	for (int i = 0; i < properties.size(); i++) j["properties"][i] = properties[i]->toJson();
+	return j;
 }

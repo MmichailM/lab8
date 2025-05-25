@@ -8,6 +8,6 @@
 int main() {
 	Apartment ap;
 	nlohmann::json j;
-	ap.fromJson(j);
+	ap.fromJson(j["properties"][0]);
 	cout << ap;
 }

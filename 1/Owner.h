@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Owner {
+class Owner : public Ijsonio {
 	string fullname;
 	string inn;
 	vector<Property*> properties;

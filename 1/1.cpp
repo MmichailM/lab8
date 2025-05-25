@@ -6,5 +6,8 @@
 #include <iomanip>
 
 int main() {
-	Apartment ap;
+	Owner man;
+	nlohmann::json j;
+	man.fromJson(j);
+	cout << man;
 }

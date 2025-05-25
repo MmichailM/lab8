@@ -55,6 +55,6 @@ void Owner::fromJson(nlohmann::json j) {
 	properties = properties1;
 }
 
-nlohmann::json Owner::toJson() {
-
-}
+//nlohmann::json Owner::toJson() {
+//
+//}

@@ -1,9 +1,7 @@
 #include "PropertySimpleFactory.h"
 
 Property* PropertySimpleFactory::getProperty(string key) {
-    Property* pr;
-    if (key == "Apartment") (Apartment*) pr;
-    else if (key == "Car") (Car*) pr;
-    else if (key == "CountryHouse") (CountryHouse*) pr;
-    return pr;
+    if (key == "Apartment") return new Apartment();
+    else if (key == "Car") return new Car();
+    else if (key == "CountryHouse") return new CountryHouse();
 }

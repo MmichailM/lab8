@@ -67,24 +67,25 @@ int main() {
 			cout << "Введите сколько имущества будет у собственника " << human.get_fullname() << ": ";
 			cin >> n;
 			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
-			vector<Property*> prop;
 			int count = 0;
 			int c1;
 			for (int i = 0; i < n; i++) {
 				system("cls");
 				count++;
 				cout << "Какого типа будет имущество №" << count << ":\n"
-					<< "1. Квартира\n"
-					<< "2. Автомобиль\n"
-					<< "3. Загородный дом\n";
+					<< "\t1. Квартира\n"
+					<< "\t2. Автомобиль\n"
+					<< "\t3. Загородный дом\n";
+				cout << "Ваш выбор: ";
 				cin >> c1;
 				cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 				while (c1 < 1 || c1 > 3) {
 					system("cls");
 					cout << "Какого типа будет имущество №" << count++ << ":\n"
-						<< "1. Квартира\n"
-						<< "2. Автомобиль\n"
-						<< "3. Загородный дом\n";
+						<< "\t1. Квартира\n"
+						<< "\t2. Автомобиль\n"
+						<< "\t3. Загородный дом\n";
+					cout << "Ваш выбор: ";
 					cin >> c1;
 					cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 				}
@@ -116,7 +117,7 @@ int main() {
 								<< "\tВведите площадь квартиры: " << square << '\n';
 						}
 					}
-					prop.push_back(new Apartment(worth, square));
+					human.addProperty(new Apartment(worth, square));
 				}
 				else if (c1 == 2) {
 					system("cls");
@@ -146,7 +147,7 @@ int main() {
 								<< "\tВведите мощность двигателя автомобиля: " << horsepower << '\n';
 						}
 					}
-					prop.push_back(new Car(worth, horsepower));
+					human.addProperty(new Car(worth, horsepower));
 				}
 				else if (c1 == 3) {
 					system("cls");
@@ -176,10 +177,13 @@ int main() {
 								<< "\tВведите расстояние до города у загородного дома: " << distanceFromCity << '\n';
 						}
 					}
-					prop.push_back(new CountryHouse(worth, distanceFromCity));
+					human.addProperty(new CountryHouse(worth, distanceFromCity));
 				}
 			}
 			man = &human;
+			system("cls");
+			cin.ignore();
+			cin.clear();
 			out(man);
 			break;
 		}

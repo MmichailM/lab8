@@ -40,3 +40,21 @@ ostream& operator<<(ostream& out, Owner& o) {
 	for (Property* i : vec) out << '\t' << *i;
 	return out;
 }
+
+void Owner::fromJson(nlohmann::json j) {
+	string fullname1 = j["fullname"];
+	string inn1 = j["inn"];
+	vector<Property*> properties1(j["properties"].size());
+	string key;
+	for (int i = 0; i < properties1.size(); i++) {
+		key = j.items().begin().key();
+		properties1[i] = PropertySimpleFactory::getProperty(key);
+	}
+	fullname = fullname1;
+	inn = inn1;
+	properties = properties1;
+}
+
+nlohmann::json Owner::toJson() {
+
+}

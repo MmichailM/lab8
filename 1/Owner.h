@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "PropertySimpleFactory.h"
 
 using namespace std;
 
@@ -20,5 +21,7 @@ public:
 	void deleteProperty(size_t ind);
 	double sumPropertyTaxes();
 	friend ostream& operator<< (ostream& out, Owner& o);
+	void fromJson(nlohmann::json j);
+	nlohmann::json toJson();
 };
 

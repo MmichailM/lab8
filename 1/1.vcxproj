@@ -134,6 +134,7 @@
     <ClCompile Include="Init.cpp" />
     <ClCompile Include="Owner.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="PropertySimpleFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -147,6 +148,7 @@
     <ClInclude Include="Init.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="PropertySimpleFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

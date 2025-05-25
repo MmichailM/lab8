@@ -4,6 +4,7 @@ class Car : public Property {
 protected:
 	double horsepower;
 public:
+	Car() : horsepower(0.0), Property(0) {}
 	Car(size_t worth, double horsepower);
 	double get_horsepower() const;
 	double calculatePropertyTax() const;

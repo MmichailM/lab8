@@ -6,5 +6,5 @@
 #include <iomanip>
 
 int main() {
-	Owner man
+	Apartment ap;
 }

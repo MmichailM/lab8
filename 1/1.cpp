@@ -7,4 +7,7 @@
 
 int main() {
 	Apartment ap;
+	nlohmann::json j;
+	ap.fromJson(j);
+	cout << ap;
 }

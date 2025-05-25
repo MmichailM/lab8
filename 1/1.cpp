@@ -14,5 +14,8 @@ int main() {
 	nlohmann::json j;
 	j = nlohmann::json::parse(fin);
 	man.fromJson(j);
-	cout << man;
+	nlohmann::json js = man.toJson();
+	ofstream fout("output.json");
+	fout << js.dump(4);
+	fout.close();
 }

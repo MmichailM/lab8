@@ -1,0 +1,30 @@
+{
+    "fullname": "Karavaev Danil Vladimirovich",
+    "inn": "729502789403",
+    "properties": [
+        {
+            "Apartment": {
+                "square": 80.0,
+                "worth": 4000000
+            }
+        },
+        {
+            "Apartment": {
+                "square": 90.0,
+                "worth": 5000000
+            }
+        },
+        {
+            "Car": {
+                "horsepower": 75.0,
+                "worth": 4000000
+            }
+        },
+        {
+            "CountryHouse": {
+                "distanceFromCity": 30,
+                "worth": 15000000
+            }
+        }
+    ]
+}

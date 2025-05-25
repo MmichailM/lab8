@@ -24,13 +24,9 @@ void Car::fromJson(nlohmann::json j) {
 }
 
 nlohmann::json Car::toJson() {
-	ifstream fin("input.json");
 	nlohmann::json j;
-	j = nlohmann::json::parse(fin);
-	int ind = j["properties"].size();
-	j["properties"][ind]["Car"]["horsepower"] = horsepower;
-	j["properties"][ind]["Car"]["worth"] = worth;
-	fin.close();
+	j["Car"]["horsepower"] = horsepower;
+	j["Car"]["worth"] = worth;
 	return j;
 }
 

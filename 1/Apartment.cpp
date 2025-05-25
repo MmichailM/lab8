@@ -21,13 +21,9 @@ void Apartment::fromJson(nlohmann::json j) {
 }
 
 nlohmann::json Apartment::toJson() {
-	ifstream fin("input.json");
 	nlohmann::json j;
-	j = nlohmann::json::parse(fin);
-	int ind = j["properties"].size();
-	j["properties"][ind]["Apartment"]["square"] = square;
-	j["properties"][ind]["Apartment"]["worth"] = worth;
-	fin.close();
+	j["Apartment"]["square"] = square;
+	j["Apartment"]["worth"] = worth;
 	return j;
 }
 

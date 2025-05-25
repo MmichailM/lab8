@@ -21,13 +21,9 @@ void CountryHouse::fromJson(nlohmann::json j) {
 }
 
 nlohmann::json CountryHouse::toJson() {
-	ifstream fin("input.json");
 	nlohmann::json j;
-	j = nlohmann::json::parse(fin);
-	int ind = j["properties"].size();
-	j["properties"][ind]["CountryHouse"]["distanceFromCity"] = distanceFromCity;
-	j["properties"][ind]["CountryHouse"]["worth"] = worth;
-	fin.close();
+	j["CountryHouse"]["distanceFromCity"] = distanceFromCity;
+	j["CountryHouse"]["worth"] = worth;
 	return j;
 }
 

@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Property">
-    <Position X="5.75" Y="4" Width="2.25" />
+    <Position X="5.75" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAABAAAAAAAACAAKAAAAAQAAAQA=</HashCode>
+      <HashCode>AAAAQAAAAAABAAAAAAABAAAAAAAgCAAKAAAAAQAAAQA=</HashCode>
       <FileName>Property.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Apartment">
-    <Position X="2.25" Y="4" Width="2" />
+    <Position X="2.5" Y="8.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAABAAAAAAAgCABAAAAAQIAAIAA=</HashCode>
       <FileName>Apartment.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CountryHouse">
-    <Position X="5.75" Y="7" Width="2.25" />
+    <Position X="5.75" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAARBAAAAAABAAAAAAAgCAAAAgAAIAAAAAA=</HashCode>
       <FileName>CountryHouse.h</FileName>
@@ -24,12 +24,12 @@
   <Class Name="Owner">
     <Position X="6" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAIAIACACAAAQAAAAAAAAAAAAAgAAAAAAQEEAAACAAA=</HashCode>
+      <HashCode>AAIAIACACAABQAAAAAAAAAEAAAwgAAAAAQEEAAACAAA=</HashCode>
       <FileName>Owner.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Car">
-    <Position X="9.75" Y="4" Width="2.5" />
+    <Position X="9.5" Y="8.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAQhAAAAAAABAAAAAAAgCAAAAAAAAAAAAAI=</HashCode>
       <FileName>Car.h</FileName>
@@ -40,6 +40,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Ijsonio.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PropertySimpleFactory">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertySimpleFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

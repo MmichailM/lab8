@@ -1,0 +1,131 @@
+@startuml
+
+
+
+
+
+/' Objects '/
+
+class Apartment {
+	+Apartment()
+	+Apartment(size_t worth, double square)
+	+~Apartment()
+	+calculatePropertyTax() : double {query}
+	+get_square() : double {query}
+	#square : double
+	+toJson() : nlohmann::json
+	+fromJson(nlohmann::json json) : void
+	+printProperty(ostream& out) : void
+}
+
+
+class Car {
+	+Car()
+	+Car(size_t worth, double horsepower)
+	+~Car()
+	+calculatePropertyTax() : double {query}
+	+get_horsepower() : double {query}
+	#horsepower : double
+	+toJson() : nlohmann::json
+	+fromJson(nlohmann::json json) : void
+	+printProperty(ostream& out) : void
+}
+
+
+class CountryHouse {
+	+CountryHouse()
+	+CountryHouse(size_t worth, size_t distanceFromCity)
+	+~CountryHouse()
+	+calculatePropertyTax() : double {query}
+	+toJson() : nlohmann::json
+	#distanceFromCity : size_t
+	+get_distance() : size_t {query}
+	+fromJson(nlohmann::json json) : void
+	+printProperty(ostream& out) : void
+}
+
+
+abstract class Ijsonio {
+	#~Ijsonio()
+	#{abstract} toJson() : nlohmann::json
+	#{abstract} fromJson(nlohmann::json json) : void
+}
+
+
+class Owner {
+	+Owner()
+	+Owner(string fullname, string INN)
+	+~Owner()
+	+sumIncomeTaxes() : double
+	+sumPropertyTaxes() : double
+	+toJson() : nlohmann::json
+	+operator<<(ostream& out, Owner& o) : ostream&
+	-fullname : string
+	+get_fullname() : string
+	+get_inn() : string
+	-inn : string
+	+get_properties() : vector<Property*>
+	-properties : vector<Property*>
+	+addProperty(Property* property) : void
+	+deleteProperty(size_t ind) : void
+	+fromJson(nlohmann::json j) : void
+}
+
+
+abstract class Property {
+	+Property()
+	+Property(size_t worth)
+	+~Property()
+	+calculateIncomeTax() : double {query}
+	+{abstract} calculatePropertyTax() : double {query}
+	+{abstract} toJson() : nlohmann::json
+	+operator<<(ostream& out, Property& pr) : ostream&
+	+get_worth() : size_t
+	#worth : size_t
+	+{abstract} fromJson(nlohmann::json json) : void
+	+{abstract} printProperty(ostream& out) : void
+}
+
+
+class PropertySimpleFactory {
+	+{static} getProperty(string key) : Property*
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+Ijsonio <|-- Owner
+
+
+Ijsonio <|-- Property
+
+
+Property <|-- Apartment
+
+
+Property <|-- Car
+
+
+Property <|-- CountryHouse
+
+
+
+
+
+/' Aggregation relationships '/
+
+Owner o-- Property
+
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml

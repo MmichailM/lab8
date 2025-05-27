@@ -78,3 +78,8 @@ nlohmann::json Owner::toJson() {
 	for (int i = 0; i < properties.size(); i++) j["properties"][i] = properties[i]->toJson();
 	return j;
 }
+
+Owner::~Owner() {
+	for (Property* i : properties) delete i;
+	properties.clear();
+}

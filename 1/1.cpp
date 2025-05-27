@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <iomanip>
 
-void out(Owner* man);
+void out(Owner& man);
 
 int main() {
 	SetConsoleOutputCP(1251);
@@ -30,7 +30,6 @@ int main() {
 	}
 	c--;
 	system("cls");
-	Owner* man = new Owner;
 	switch (c) {
 		case Write: {
 			string fullname;
@@ -180,11 +179,10 @@ int main() {
 					human.addProperty(new CountryHouse(worth, distanceFromCity));
 				}
 			}
-			man = &human;
 			system("cls");
 			cin.ignore();
 			cin.clear();
-			out(man);
+			out(human);
 			break;
 		}
 		case (Json): {
@@ -217,23 +215,21 @@ int main() {
 				clog << "Некорректный файл ввода\n";
 				return -1;
 			}
-			man = &human;
-			out(man);
+			out(human);
 			break;
 		}
 	}
 }
 
-void out(Owner* man) {
-	Owner human = *man;
+void out(Owner& man) {
 	string output_file;
 	cout << "Информация о собственнике:\n";
-	cout << '\t' << human;
+	cout << '\t' << man;
 	cout << "Введите название файла вывода: ";
 	getline(cin, output_file);
 	ofstream fout;
 	fout.open(output_file);
-	nlohmann::json js = human.toJson();
+	nlohmann::json js = man.toJson();
 	while (true) {
 		try {
 			fout << js.dump(4);
@@ -247,5 +243,5 @@ void out(Owner* man) {
 		}
 	}
 	fout.close();
-	cout << "\n\nВ файл " << output_file << " выведена информация о налогах на имущество собственника " << human.get_fullname() << '\n';
+	cout << "\n\nВ файл " << output_file << " выведена информация о налогах на имущество собственника " << man.get_fullname() << '\n';
 }
